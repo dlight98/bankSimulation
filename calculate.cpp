@@ -15,7 +15,7 @@ int Calculate::calcClock(int calTime){
   int temp2 = 0;
   int temp3 = 0;
   int ans = calTime;
-  
+
   temp = calTime/100;
   temp = temp * 100;
   temp2 = calTime - temp;
