@@ -22,10 +22,10 @@ class linked_list{
 		bool Search(NODETYPE &value);
 		bool IsEmpty() const;
 		void PrintAll();
-		NODETYPE getCurrent();
-		void curNext();
-		void makeCurFirst();
-		bool isCurLast();
+		NODETYPE getCurrent();	//gets the value of the current node
+		void curNext();	//moves the current node to current->next
+		void makeCurFirst();	//makes current become the first node
+		bool isCurLast();	//checks if current is the last node
 	private:
 		ListNode<NODETYPE> *first;
 		ListNode<NODETYPE> *current;

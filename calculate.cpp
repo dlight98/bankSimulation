@@ -24,7 +24,7 @@ int Calculate::calcClock(int calTime){
     temp2 = temp2%60;
     ans = temp + 100 + temp2;
   }
-  return ans; //TEMP
+  return ans;
 }
 
 

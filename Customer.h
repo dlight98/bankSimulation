@@ -1,3 +1,7 @@
+/*
+Nick Turner
+2019.4.25
+*/
 #include <iostream>
 #include <string>
 #ifndef CUSTOMER_H
@@ -6,9 +10,9 @@ using namespace std;
 
 class Customer{
 public:
-  Customer();
-  Customer(string name, int time, int mins);
-  Customer(string& line);
+  Customer(); //default constructor
+  Customer(string name, int time, int mins);  //constructor
+  Customer(string& line); //makes the Customer from one file line
 
   //getters
   string getName();

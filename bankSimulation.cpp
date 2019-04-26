@@ -9,12 +9,6 @@
 
 using namespace std;
 
-/*struct cust {
-	string name;
-	int timeEntered;
-	int minutes;
-};*/
-
 int main(){
 	CustomerDatabase listOfPeople("line.txt");
 	Customer tempCust;
@@ -23,15 +17,16 @@ int main(){
 	double avg = 0.0;
 	queue<Customer> line;
 	while(curTime < 1701){
-		curTime = calc.calcClock(curTime);
+		curTime = calc.calcClock(curTime);		//first calculates to see if time should roll over
 		listOfPeople.calcTime(curTime, tempCust, line);
-		curTime++;
+		curTime++; //goto next minute
 	}
+	//once it is past 1700 go until empty
 	while(!line.empty() || listOfPeople.getInTeller() == true){
 		listOfPeople.calcTime(curTime, tempCust, line);
 		curTime++;
 	}
-	avg = listOfPeople.avgTime();
+	avg = listOfPeople.avgTime();	//average the wait time
 	cout<<"Average wait time is "<<avg<<" minutes."<<endl;
 
 	return 0;
