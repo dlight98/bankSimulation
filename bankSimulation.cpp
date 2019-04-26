@@ -24,10 +24,10 @@ int main(){
 		listOfPeople.calcTime(curTime, tempCust, line);
 		curTime++;
 	}
-	/*while(!line.empty()){
+	while(!line.empty() || listOfPeople.getInTeller() == true){
 		listOfPeople.calcTime(curTime, tempCust, line);
 		curTime++;
-	}*/
+	}
 
 	return 0;
 }

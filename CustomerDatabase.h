@@ -13,6 +13,7 @@ public:
   CustomerDatabase();
   CustomerDatabase(string filename);
   void calcTime(int min, Customer& tempCust, queue<Customer>& line);
+  bool getInTeller();
 
 private:
   string file;
@@ -20,6 +21,7 @@ private:
   int inside;	//the amount of time inside
 	//queue<Customer> line;
   Customer atTeller;
+  bool inTeller;
 };
 
 #endif
