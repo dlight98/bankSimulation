@@ -13,8 +13,7 @@ class Calculate {
 
 public:
 	Calculate();
-	void calcTime(int min, CustomerDatabase& data);
-
+	int calcClock(int calTime);
 
 private:
 	int inside;	//the amount of time inside

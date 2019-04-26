@@ -37,31 +37,32 @@ bool CustomerDatabase::getInTeller(){
   return inTeller;
 }
 
-void CustomerDatabase::calcTime(int min, Customer& tempCust, queue<Customer>& line){
-  //cout<<"the minute is: "<<min<<endl; //DEBUG
+void CustomerDatabase::calcTime(int calTime, Customer& tempCust, queue<Customer>& line){
+  //cout<<"the minute is: "<<calTime<<endl; //DEBUG
   database.makeCurFirst();
   while(database.isCurLast() == false){
-    if(min <= database.getCurrent().getTimeIn()){
+    if(calTime == database.getCurrent().getTimeIn()){
       tempCust = database.getCurrent();
       break;
     } else {
       database.curNext();
     }
   }
-  if(min <= database.getCurrent().getTimeIn()){ //do it one last time
+  if(calTime == database.getCurrent().getTimeIn()){ //do it one last time
     tempCust = database.getCurrent();
   }
   //cout<<"Next customer: "<<tempCust.getName()<<endl; //DEBUG
-  if(min == tempCust.getTimeIn()){
-    //cout<<"The minute is: "<<min<<endl; //DEBUG
+  if(calTime == tempCust.getTimeIn()){
+    //cout<<"The minute is: "<<calTime<<endl; //DEBUG
     //cout<<"Adding to line: "<<tempCust.getName()<<endl; //DEBUG
-    cout<<tempCust.getName()<<" got in line at "<<min<<"."<<endl;
+    cout<<tempCust.getName()<<" got in line at "<<calTime<<"."<<endl;
     line.push(tempCust);
   }if(inside <= 0){
     if(inside == 0){
-      cout<<atTeller.getName()<<" is done at "<<min<<"."<<endl;
+      cout<<atTeller.getName()<<" is done at "<<calTime<<"."<<endl;
       inTeller = false;
-    }}
+    }
+  }
 
     if(!line.empty() && !inTeller) {
       inTeller = true;

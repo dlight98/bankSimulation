@@ -18,10 +18,12 @@ using namespace std;
 int main(){
 	CustomerDatabase listOfPeople("line.txt");
 	Customer tempCust;
+	Calculate calc;
 	int curTime = 900;
 	queue<Customer> line;
 	while(curTime < 1701){
 		listOfPeople.calcTime(curTime, tempCust, line);
+		curTime = calc.calcClock(curTime);
 		curTime++;
 	}
 	while(!line.empty() || listOfPeople.getInTeller() == true){

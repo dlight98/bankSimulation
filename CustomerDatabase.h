@@ -12,7 +12,7 @@ class CustomerDatabase{
 public:
   CustomerDatabase();
   CustomerDatabase(string filename);
-  void calcTime(int min, Customer& tempCust, queue<Customer>& line);
+  void calcTime(int time, Customer& tempCust, queue<Customer>& line);
   bool getInTeller();
 
 private:
