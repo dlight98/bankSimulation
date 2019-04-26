@@ -8,6 +8,7 @@ class Customer{
 public:
   Customer();
   Customer(string name, int time, int mins);
+  Customer(string& line);
 
   //getters
   string getName();

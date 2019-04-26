@@ -16,7 +16,8 @@ using namespace std;
 };*/
 
 int main(){
-
+	CustomerDatabase listOfPeople("line.txt");
+	
 
 	return 0;
 }
