@@ -8,6 +8,8 @@
 
 using namespace std;
 
+Calculate::Calculate(){}
+
 
 
 #endif

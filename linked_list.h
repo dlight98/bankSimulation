@@ -22,6 +22,10 @@ class linked_list{
 		bool Search(NODETYPE &value);
 		bool IsEmpty() const;
 		void PrintAll();
+		NODETYPE getCurrent();
+		void curNext();
+		void makeCurFirst();
+		bool isCurLast();
 	private:
 		ListNode<NODETYPE> *first;
 		ListNode<NODETYPE> *current;

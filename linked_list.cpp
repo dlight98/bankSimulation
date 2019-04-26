@@ -354,4 +354,28 @@ bool linked_list<NODETYPE>::Remove(NODETYPE & value) {
 	return false;
 }
 
+template <class NODETYPE>
+NODETYPE linked_list<NODETYPE>::getCurrent(){
+	return current->data;
+}
+
+template <class NODETYPE>
+void linked_list<NODETYPE>::curNext(){
+	current = current->next;
+}
+
+template <class NODETYPE>
+void linked_list<NODETYPE>::makeCurFirst(){
+	current = first;
+}
+
+template <class NODETYPE>
+bool linked_list<NODETYPE>::isCurLast(){
+	if(current == last){
+		return true;
+	}else{
+		return false;
+	}
+}
+
 #endif

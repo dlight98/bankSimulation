@@ -17,7 +17,17 @@ using namespace std;
 
 int main(){
 	CustomerDatabase listOfPeople("line.txt");
-	
+	Customer tempCust;
+	int curTime = 900;
+	queue<Customer> line;
+	while(curTime < 1701){
+		listOfPeople.calcTime(curTime, tempCust, line);
+		curTime++;
+	}
+	/*while(!line.empty()){
+		listOfPeople.calcTime(curTime, tempCust, line);
+		curTime++;
+	}*/
 
 	return 0;
 }
