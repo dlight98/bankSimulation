@@ -20,6 +20,7 @@ int main(){
 	Customer tempCust;
 	Calculate calc;
 	int curTime = 900;
+	double avg = 0.0;
 	queue<Customer> line;
 	while(curTime < 1701){
 		curTime = calc.calcClock(curTime);
@@ -30,6 +31,8 @@ int main(){
 		listOfPeople.calcTime(curTime, tempCust, line);
 		curTime++;
 	}
+	avg = listOfPeople.avgTime();
+	cout<<"Average wait time is "<<avg<<" minutes."<<endl;
 
 	return 0;
 }

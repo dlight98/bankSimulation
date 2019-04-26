@@ -13,6 +13,7 @@ CustomerDatabase::CustomerDatabase(){}
 CustomerDatabase::CustomerDatabase(string filename){
   this->file = filename;
   this->inside = -1;
+  this->totalTimeWaited = 0;
   inTeller = false;
   ifstream filepointer;
 	filepointer.open(filename);
@@ -63,7 +64,6 @@ void CustomerDatabase::calcTime(int calTime, Customer& tempCust, queue<Customer>
       inTeller = false;
     }
   }
-
     if(!line.empty() && !inTeller) {
       inTeller = true;
       atTeller = line.front();
@@ -75,7 +75,19 @@ void CustomerDatabase::calcTime(int calTime, Customer& tempCust, queue<Customer>
   //}
   inside--;
   //cout<<"inside: "<<inside<<endl; //DEBUG
-  //delete temp;
+  this->totalTimeWaited += line.size();
+}
+
+double CustomerDatabase::avgTime(){
+  double count = 0.0;
+  database.makeCurFirst();
+  while(database.isCurLast() == false){
+    count++;
+    database.curNext();
+  }
+  count++;
+  avg = totalTimeWaited / count;
+  return avg;
 }
 
 #endif
